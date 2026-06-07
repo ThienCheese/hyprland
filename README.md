@@ -16,36 +16,24 @@ A modern, fluid, and fully dynamic **Hyprland ecosystem** built on top of **Fedo
 ## Video Showcase
 
 <div align="center">
-  <video src="demo/video.mp4" width="100%" controls autoplay loop muted>
-    Your browser does not support the video tag.
-  </video>
-  <p><i>A quick tour of system animations, workspace switching, and dynamic theme reloading.</i></p>
+  <a href="https://youtu.be/6g4ZrjYYFNU" target="_blank">
+    <img src="demo/2026-06-07-161634_grim.png" width="85%" alt="Watch Video Demo" style="border-radius: 8px; border: 2px solid #26afe6;"/>
+    <br/>
+    <b>▶ Click here to watch</b>
+  </a>
 </div>
 
 <br/>
 
 ## Screenshots
 
-<details>
-<summary> Expand to view Workspace Screenshots</summary>
-<br/>
-
 <div align="center">
+
   <img src="demo/2026-06-07-161634_grim.png" width="90%" alt="Clean Workspace Preview" />
-  
-  <br/>
   <img src="demo/2026-06-07-161922_grim.png" width="90%" alt="Active Windows Preview" />
-
-
-  <br/>
   <img src="demo/2026-06-07-161934_grim.png" width="90%" alt="Application Launcher Preview" />
-
-
-  <br/>
   <img src="demo/2026-06-07-162137_grim.png" width="90%" alt="Control Center Preview" />
-
 </div>
-</details>
 
 ---
 
@@ -64,7 +52,7 @@ A modern, fluid, and fully dynamic **Hyprland ecosystem** built on top of **Fedo
 
 | Component | Software Chosen | Purpose |
 | :--- | :--- | :--- |
-| **OS** | Fedora Linux | Core cutting-edge stable base |
+| **OS** | Fedora 44 | Core cutting-edge stable base |
 | **Window Manager** | Hyprland (0.55+) | Fluid Wayland Compositor |
 | **Status Bar** | Waybar | Highly customized styling & system monitors |
 | **Notification Center** | SwayNC | Rich notification agent & control center |
