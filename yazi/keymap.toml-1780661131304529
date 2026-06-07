@@ -1,0 +1,4 @@
+[[manager.prepend_keymap]]
+on   = [ "W" ]
+run  = "shell '~/.config/hyprland/scripts/chwall.sh \"$@\"' --confirm"
+desc = "Đặt bức ảnh này làm hình nền và đổi màu hệ thống"

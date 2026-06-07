@@ -1,0 +1,104 @@
+/* Nạp bảng màu động từ Wallust */
+@import "/home/cheese/.config/waybar/wallust/colors-waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+}
+
+/* Biến thanh Bar chính thành trong suốt để lộ các ốc đảo */
+window#waybar {
+    background-color: transparent;
+}
+
+/* --- CẤU HÌNH PHONG CÁCH CHUNG CHO CÁC ỐC ĐẢO (ISLANDS) --- */
+#workspaces,
+#clock,
+#power-profiles-daemon,
+#battery,
+#network,
+#bluetooth,
+#custom-power {
+    background-color: rgba(15, 15, 15, 0.75); /* Nền tối mờ 75% */
+    color: @foreground;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Viền mờ siêu mỏng */
+    padding: 0 14px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-radius: 12px; /* Bo góc dạng viên thuốc */
+    
+    /* Đổ bóng nhẹ tạo chiều sâu nổi lên trên hình nền */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+}
+
+/* --- ĐIỀU CHỈNH CHI TIẾT TỪNG ỐC ĐẢO --- */
+
+/* Ốc đảo 1: Khu vực quản lý Workspace (Bên trái) */
+#workspaces {
+    padding: 0 4px;
+    margin-left: 10px;
+}
+#workspaces button {
+    padding: 0 8px;
+    color: @color7;
+    margin: 4px 2px;
+}
+#workspaces button.active {
+    color: @color2;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* Ốc đảo 2: Đồng hồ (Chính giữa) */
+#clock {
+    color: @color4;
+}
+
+/* Ốc đảo 3: Chế độ năng lượng */
+#power-profiles-daemon {
+    color: @color5;
+}
+
+/* Ốc đảo 4: Trạng thái Pin */
+#battery {
+    color: @color2;
+}
+#battery.charging, #battery.plugged {
+    color: @color3;
+}
+/* Ốc đảo Mạng (Wifi/Ethernet) */
+#network {
+    color: @color3; /* Set màu sắc đặc trưng khi có mạng (Ví dụ: màu xanh của Wallust) */
+}
+
+#network.disconnected {
+    /* KHÔNG ghi đè background-color để giữ nguyên nền mờ 75% */
+    color: @color1; /* Chuyển chữ/icon sang màu đỏ/tối của Wallust để cảnh báo mất mạng */
+}
+
+/* Ốc đảo Bluetooth */
+#bluetooth {
+    color: @color6; /* Màu sắc khi bluetooth ở trạng thái bật/sẵn sàng */
+}
+
+#bluetooth.connected {
+    color: @color3; /* Chỉ đổi màu chữ/icon sáng lên khi có thiết bị kết nối */
+    /* XÓA BỎ DÒNG background-color lỗi ở đây */
+}
+
+#bluetooth.disabled {
+    color: @color7; /* Đổi sang tông màu tối mờ khi tắt Bluetooth */
+    opacity: 0.4;   /* Làm mờ hẳn đi để báo hiệu block này đang tắt */
+}
+/* Ốc đảo 5: Nút nguồn wlogout (Ngoài cùng bên phải) */
+#custom-power {
+    color: #f38ba8; /* Giữ màu đỏ tạo điểm nhấn độc lập */
+    margin-right: 10px;
+    padding: 0 16px;
+}
+#custom-power:hover {
+    background-color: #f38ba8;
+    color: #11111b;
+}

@@ -1,0 +1,22 @@
+/* ~/.config/matugen/templates/colors-wlogout.css */
+@define-color primary {{colors.primary.default.hex}};
+@define-color primary_container {{colors.primary_container.default.hex}};
+@define-color main_bg {{colors.surface.default.hex}};
+@define-color text_color {{colors.on_surface.default.hex}};
+
+/* Tạo một biến màu đã được làm mờ 50% từ màu main_bg gốc của hệ thống */
+@define-color button_bg_transparent alpha(@main_bg, 0.5);
+
+/* Cấu hình các nút bấm của wlogout ăn theo màu hệ thống */
+button {
+    background-color: @button_bg_transparent;
+    color: @text_color;
+    border-radius: 20px;
+    border: 2px solid @primary_container;
+}
+
+button:focus, button:active, button:hover {
+    background-color: @primary;
+    color: {{colors.on_primary.default.hex}};
+    border: 2px solid @primary;
+}

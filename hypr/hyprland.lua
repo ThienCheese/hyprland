@@ -1,0 +1,6 @@
+require("modules.monitors")
+require("modules.programs")
+require("modules.autostart")
+require("modules.look")
+require("modules.input")
+require("modules.keybinds")

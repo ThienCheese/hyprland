@@ -1,0 +1,15 @@
+# ~/.config/matugen/config.toml
+[config]
+json_format = "hex"
+
+[templates.gtk3]
+input_path = '/home/cheese/.config/matugen/templates/gtk-colors.css'
+output_path = '/home/cheese/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '/home/cheese/.config/matugen/templates/gtk-colors.css'
+output_path = '/home/cheese/.config/gtk-4.0/gtk.css'
+
+[templates.wlogout]
+input_path = '/home/cheese/.config/matugen/templates/colors-wlogout.css'
+output_path = '/home/cheese/.config/wlogout/colors.css'

@@ -1,0 +1,190 @@
+/* Nạp chính xác bảng màu động từ Wallust */
+@import "/home/cheese/.config/swaync/colors.css";
+
+* {
+    outline: none;
+    font-family: "JetBrainsMono Nerd Font", "Segoe UI Variable Static Text", sans-serif;
+    font-size: 15px;
+    text-shadow: none;
+    color: @foreground;
+    background-color: transparent;
+    background: transparent;
+}
+
+/* --- TOÀN BỘ KHU VỰC TRUNG TÂM ĐIỀU KHIỂN --- */
+.control-center {
+    background-color: alpha(@background, 0.85); /* Nền tối mờ đồng bộ Waybar */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 10px;
+}
+
+.control-center .notification-row .notification-background {
+    border-radius: 12px;
+    margin-top: 8px;
+    background-color: alpha(@background, 0.5);
+}
+
+/* --- POPUP THÔNG BÁO THẢ NỔI --- */
+.notification {
+    background-color: alpha(@background, 0.9);
+    border-radius: 12px;
+    margin: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.notification > *:last-child > * {
+    margin: 8px;
+}
+
+.summary { font-size: 1.1rem; font-weight: bold; }
+.time { font-size: 0.8rem; opacity: 0.6; }
+.body { font-size: 0.95rem; opacity: 0.85; }
+
+.notification-content {
+    padding: 15px;
+}
+
+.notification-action > button {
+    padding: 6px;
+    margin: 4px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+.notification-action > label {
+    font-size: 0.9rem;
+}
+
+/* Cảnh báo nguy hiểm */
+.notification.critical {
+    background-color: alpha(#e64553, 0.6);
+    border: 1px solid #e64553;
+}
+
+.close-button {
+    background-color: alpha(@background, 0.4);
+    border-radius: 100px;
+    padding: 2px;
+}
+.close-button:hover {
+    background-color: alpha(#e64553, 0.8);
+}
+
+/* --- CẤU HÌNH CÁC WIDGETS NỘI KHU --- */
+
+/* Title Widget */
+.widget-title {
+    padding: 10px 5px;
+    font-weight: bold;
+}
+.widget-title > label {
+    font-size: 1.4rem;
+}
+.widget-title > button {
+    background: alpha(#e64553, 0.2);
+    color: #e64553;
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 0.9rem;
+    transition: all .3s ease;
+}
+.widget-title > button:hover {
+    background: #e64553;
+    color: @background;
+}
+
+/* Buttons Grid Widget (WiFi, Bluetooth, Mute) */
+.widget-buttons-grid {
+    padding: 10px 5px;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: alpha(@foreground, 0.08);
+    border-radius: 12px;
+    min-width: 75px;
+    min-height: 45px;
+    margin: 4px;
+    font-size: 1.3rem;
+    transition: all .3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: alpha(@foreground, 0.18);
+}
+/* Trạng thái nút khi được kích hoạt bật */
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: @color4; /* Ăn theo màu Accent của Wallust */
+    color: @background;
+}
+
+/* Mpris Music Widget */
+@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.4);
+.widget-mpris .widget-mpris-player {
+    padding: 12px;
+    margin: 10px 5px;
+    background-color: @mpris-album-art-overlay;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.widget-mpris .widget-mpris-player .widget-mpris-album-art {
+    border-radius: 10px;
+}
+.widget-mpris .widget-mpris-player .widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Volume & Backlight Sliders */
+.widget-volume, .widget-backlight {
+    padding: 12px 5px;
+}
+trough highlight {
+    background: @color4; /* Thanh trượt ăn theo màu hệ thống */
+    border-radius: 100px;
+}
+scale trough {
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: 10px;
+    border-radius: 100px;
+}
+slider {
+    background-color: @foreground;
+    border-radius: 100px;
+    min-height: 14px;
+    min-width: 14px;
+}
+
+/* Do Not Disturb Switch */
+.widget-dnd {
+    font-weight: bold;
+    padding: 10px 5px;
+}
+.widget-dnd > switch {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px;
+}
+.widget-dnd > switch:checked {
+    background: @color2;
+}
+.widget-dnd > switch slider {
+    background: @foreground;
+    border-radius: 100px;
+}
+
+/* --- ẨN TOÀN BỘ THANH CUỘN (SCROLLBAR) --- */
+scrollbar,
+scrollbar button,
+scrollbar slider,
+scrolledwindow scrollbar,
+.control-center scrollbar {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    min-width: 0px !important;
+    max-width: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    opacity: 0 !important;
+}

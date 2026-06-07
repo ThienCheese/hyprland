@@ -1,0 +1,66 @@
+* {
+    font-size: 14px;
+    font-family: "JetBrains Mono NFM";
+}
+
+/* Nạp màu hệ thống từ Matugen */
+@import 'colors.css';
+
+window {
+    background-color: rgba(15, 20, 22, 0.65); /* Ăn theo tông màu tối của main_bg */
+}
+
+button {
+    border-radius: 20px;
+    margin: 15px;
+    outline-style: none;
+    
+    /* Thiết lập bắt buộc để hiện thị Icon */
+    background-repeat: no-repeat;
+    background-position: center 35%;
+    background-size: 35%;
+    
+    box-shadow: none;
+    text-shadow: none;
+    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682);
+}
+
+button:hover, button:focus {
+    background-size: 42%; /* Phóng to icon mượt mà khi hover */
+}
+
+button span {
+    font-size: 1.3em;
+    margin-top: 100px; /* Đẩy chữ xuống dưới icon */
+}
+
+/* =====================================================================
+   🌟 ĐƯỜNG DẪN ICON TUYỆT ĐỐI KHÔNG LO LỖI ĐỊNH VỊ 
+   ===================================================================== */
+#shutdown {
+    background-image: url("/home/cheese/.config/wlogout/icons/power.png");
+}
+#shutdown:hover {
+    background-image: url("/home/cheese/.config/wlogout/icons/power-hover.png");
+}
+
+#reboot {
+    background-image: url("/home/cheese/.config/wlogout/icons/restart.png");
+}
+#reboot:hover {
+    background-image: url("/home/cheese/.config/wlogout/icons/restart-hover.png");
+}
+
+#logout {
+    background-image: url("/home/cheese/.config/wlogout/icons/logout.png");
+}
+#logout:hover {
+    background-image: url("/home/cheese/.config/wlogout/icons/logout-hover.png");
+}
+
+#suspend {
+    background-image: url("/home/cheese/.config/wlogout/icons/sleep.png");
+}
+#suspend:hover {
+    background-image: url("/home/cheese/.config/wlogout/icons/sleep-hover.png");
+}

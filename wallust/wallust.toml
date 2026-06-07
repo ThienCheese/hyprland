@@ -1,0 +1,22 @@
+# ~/.config/wallust/wallust.toml
+backend = "kmeans" # hoặc "fastwal", "kmeans" tùy sở thích của bạn
+color_space = "lab"
+threshold = 11
+
+[templates]
+# Xuất màu cho Kitty (vào thẳng thư mục kitty)
+kitty = { src = 'colors-kitty.conf', dst = '~/.config/kitty/kitty-colors.conf' }
+
+# Xuất màu cho Rofi, Cava, Zathura, Rmpc, SwayNC
+rofi = { src = 'colors-rofi.rasi', dst = '~/.config/rofi/colors.rasi' }
+cava = { src = 'colors-cava', dst = '~/.config/cava/config' }
+zathura = { src = 'colors-zathura', dst = '~/.config/zathura/zathurarc' }
+rmpc = { src = 'rmpc.ron', dst = '~/.config/rmpc/themes/wallust.ron' }
+swaync = { src = 'colors-swaync.css', dst = '~/.config/swaync/colors.css' }
+
+# Xuất màu cho Waybar (vào thư mục waybar/wallust như cây thư mục của bạn)
+waybar = { src = 'colors-waybar.css', dst = '~/.config/waybar/wallust/colors-waybar.css' }
+
+# Xuất màu cho Hyprland (vào thư mục hypr/wallust)
+hyprland_conf = { src = 'colors-hyprland.conf', dst = '~/.config/hypr/wallust/wallust-hyprland.conf' }
+hyprland_lua  = { src = 'colors-hyprland.lua', dst = '~/.config/hypr/wallust/colors.lua' } 

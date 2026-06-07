@@ -1,0 +1,4 @@
+[manager]
+# Tỷ lệ chia 3 cột: [Cột_Trái, Cột_Giữa, Cột_Phải]
+# Mặc định là [1, 3, 4]. Sửa thành [1, 2, 5] hoặc [1, 3, 6] để cột phải to hẳn ra.
+layout = [ 1, 2, 5 ]

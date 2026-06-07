@@ -1,0 +1,8 @@
+[mpd]
+address = "127.0.0.1:6600"
+
+[album_art]
+# Kích hoạt hiển thị ảnh bìa album bằng Kitty Graphics Protocol
+method = "kitty"
+max_width = 30
+max_height = 15

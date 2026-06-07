@@ -1,0 +1,73 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "margin-top": 8,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 5,
+
+    // Sắp xếp vị trí các nhóm module trên thanh bar
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["power-profiles-daemon", "network", "bluetooth" ,"battery", "custom/power"],
+
+    // --- CẤU HÌNH CHI TIẾT TỪNG MODULE ---
+
+    // 1. Đồng hồ & Ngày tháng
+    "clock": {
+        "format": "  {:%H:%M  |  %d/%m}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    // 2. Trình điều khiển Chế độ Năng lượng (Performance, Balanced, Power-saver)
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "{profile}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": " Leafs"
+        }
+    },
+
+    // 3. Hiển thị Trạng thái Pin
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "network": {
+    "interface": "wlo1", 
+    "format-wifi": " ",
+    "format-disconnected": "󰤮 ",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "kitty --class floating_wifi -e nmtui" 
+    },
+
+    "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲  Off",
+    "format-connected": "  {device_alias}",
+    "format-connected-battery": " ",
+    "tooltip-format": "{num_connections} thiết bị đang kết nối",
+    "tooltip-format-connected": "{num_connections} Connected devices",
+    "on-click": "blueman-manager" 
+    },
+    // 4. Nút bấm kích hoạt Menu Tắt máy wlogout
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout -b 4",
+        "tooltip": false
+    }
+}

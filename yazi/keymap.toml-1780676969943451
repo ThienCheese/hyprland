@@ -1,0 +1,4 @@
+[[manager.keymap]]
+on   = [ "v" ] # Bạn có thể đổi thành phím khác tùy ý, ví dụ [ "p" ] hoặc [ "F3" ]
+run  = "plugin max-preview"
+desc = "Bật / Tắt phóng to tối đa cột xem trước hình ảnh"
