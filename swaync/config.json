@@ -40,21 +40,14 @@
         }
     },
     "widgets": [
-        "title",
         "buttons-grid",
-        "inhibitors",
-        "dnd",
         "volume",
         "backlight",
-        "battery",
-        "mpris",
+        "dnd",
+        "title",
         "notifications"
     ],
     "widget-config": {
-        "mpris": {
-            "image-size": 50,
-            "image-radius": 12
-        },
         "volume": {
             "label": " 󰕾 ",
             "expand-button-label": " ",
@@ -78,13 +71,17 @@
             "actions": [
                 {
                     "label": " ",
-                    "type": "execute",
-                    "command": "kitty --class floating_wifi -e nmtui"
+                    "type": "toggle",
+                    "active": true,
+                    "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
+                    "update-command": "sh -c '[[ $(nmcli r wifi) == \"enabled\" ]] && echo true || echo false'"
                 },
                 {
                     "label": "󰂯",
-                    "type": "execute",
-                    "command": "blueman-manager"
+                    "type": "toggle",
+                    "active": true,
+                    "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && rfkill unblock bluetooth || rfkill block bluetooth'",
+                    "update-command": "sh -c \"rfkill list bluetooth | grep -q \"Soft blocked: no\" && echo true || echo false\""
                 },
                 {
                     "label": " ",
