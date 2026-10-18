@@ -1,5 +1,5 @@
-/* Keep these names stable for Wallust later. */
-@import url("colors.css");
+/* Wallust colors */
+@import "colors.css";
 
 * {
     border: none;
@@ -12,14 +12,14 @@
 
 window#waybar {
     background: transparent;
-    color: @text;
+    color: @foreground;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-    background: @bar-bg;
-    border: 1px solid @border;
+    background: alpha(@background, 0.94);
+    border: 1px solid @color8;
     border-radius: 11px;
     min-height: 24px;
     padding: 3px 5px;
@@ -39,7 +39,7 @@ window#waybar {
 }
 
 #workspaces button {
-    color: @text-muted;
+    color: @color8;
     background: transparent;
     border-radius: 7px;
     min-width: 26px;
@@ -51,24 +51,24 @@ window#waybar {
 
 #workspaces button:hover,
 #workspaces button.active {
-    color: @bar-bg;
-    background: @accent;
+    color: @background;
+    background: @color4;
 }
 
 #workspaces button.urgent {
-    color: @bar-bg;
-    background: @critical;
+    color: @background;
+    background: @color1;
 }
 
 #window {
-    color: @text-muted;
+    color: @color7;
     padding: 0 10px;
 }
 
 #clock {
-    color: @text;
-    background: @panel-bg;
-    border: 0.2px solid @border;
+    color: @foreground;
+    background: @color0;
+    border: 1px solid @color8;
     border-radius: 10px;
     min-width: 148px;
     min-height: 24px;
@@ -76,7 +76,7 @@ window#waybar {
 }
 
 #clock:hover {
-    background: @module-bg-hover;
+    background: @color8;
 }
 
 #mpris,
@@ -91,9 +91,9 @@ window#waybar {
 #battery,
 #custom-swaync,
 #custom-power {
-    color: @text;
-    background: @module-bg;
-    border: 1px solid @border;
+    color: @foreground;
+    background: @color0;
+    border: 1px solid @color8;
     border-radius: 7px;
     padding: 0 9px;
     margin: 0 2px;
@@ -108,45 +108,45 @@ window#waybar {
 }
 
 #tray > .needs-attention {
-    color: @critical;
+    color: @color1;
 }
 
 #idle_inhibitor.activated,
 #pulseaudio.muted,
 #network.disconnected,
 #bluetooth.disabled {
-    color: @warning;
+    color: @color3;
 }
 
 #battery.warning {
-    color: @warning;
+    color: @color3;
 }
 
 #battery.critical {
-    color: @critical;
+    color: @color1;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: @accent;
+    color: @color2;
 }
 
 #custom-swaync {
-    color: @accent;
+    color: @color4;
     min-width: 32px;
 }
 
 #custom-swaync.notification,
 #custom-swaync.dnd-notification {
-    color: @warning;
+    color: @color3;
 }
 
 #custom-swaync.dnd-none {
-    color: @text-muted;
+    color: @color8;
 }
 
 #custom-power {
-    color: @critical;
+    color: @color1;
     min-width: 28px;
 }
 
@@ -177,23 +177,14 @@ window#waybar {
 #battery:hover,
 #custom-swaync:hover,
 #custom-power:hover {
-    background: @module-bg-hover;
-}
-
-#network:hover,
-#bluetooth:hover,
-#power-profiles-daemon:hover,
-#battery:hover,
-#custom-swaync:hover,
-#custom-power:hover {
-    background: @module-bg-hover;
+    background: alpha(@color8, 0.35);
 }
 
 tooltip {
-    background: @bar-bg;
-    border: 1px solid @border;
+    background: @background;
+    border: 1px solid @color8;
     border-radius: 9px;
-    color: @text;
+    color: @foreground;
     padding: 7px 9px;
 }
 
