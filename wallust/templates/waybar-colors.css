@@ -1,0 +1,9 @@
+@define-color bar-bg {{background}};
+@define-color module-bg {{color0}};
+@define-color module-bg-hover {{color8}};
+@define-color text {{foreground}};
+@define-color text-muted {{color7}};
+@define-color accent {{color4}};
+@define-color warning {{color3}};
+@define-color critical {{color1}};
+@define-color border {{color8}};

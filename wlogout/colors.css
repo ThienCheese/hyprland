@@ -1,0 +1,12 @@
+
+@define-color background #130D0E;
+@define-color background-alt #3E3838;
+@define-color foreground #DBE6D6;
+
+@define-color accent #DA5D2F;
+@define-color urgent #5C4146;
+@define-color muted #899484;
+@define-color border #899484;
+
+@define-color selected-bg #DA5D2F;
+@define-color selected-fg #130D0E;

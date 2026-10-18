@@ -1,0 +1,202 @@
+/* Keep these names stable for Wallust later. */
+@import url("colors.css");
+
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font", monospace;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @bar-bg;
+    border: 1px solid @border;
+    border-radius: 11px;
+    min-height: 24px;
+    padding: 3px 5px;
+}
+
+.modules-left,
+.modules-right {
+    margin: 0 3px;
+}
+
+.modules-center {
+    padding: 3px;
+}
+
+#workspaces {
+    margin: 0;
+}
+
+#workspaces button {
+    color: @text-muted;
+    background: transparent;
+    border-radius: 7px;
+    min-width: 26px;
+    min-height: 24px;
+    padding: 0 6px;
+    margin: 0 2px;
+    transition: color 150ms ease, background-color 150ms ease;
+}
+
+#workspaces button:hover,
+#workspaces button.active {
+    color: @bar-bg;
+    background: @accent;
+}
+
+#workspaces button.urgent {
+    color: @bar-bg;
+    background: @critical;
+}
+
+#window {
+    color: @text-muted;
+    padding: 0 10px;
+}
+
+#clock {
+    color: @text;
+    background: @panel-bg;
+    border: 0.2px solid @border;
+    border-radius: 10px;
+    min-width: 148px;
+    min-height: 24px;
+    padding: 0 14px;
+}
+
+#clock:hover {
+    background: @module-bg-hover;
+}
+
+#mpris,
+#pulseaudio,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#power-profiles-daemon,
+#battery,
+#custom-swaync,
+#custom-power {
+    color: @text;
+    background: @module-bg;
+    border: 1px solid @border;
+    border-radius: 7px;
+    padding: 0 9px;
+    margin: 0 2px;
+}
+
+#tray {
+    padding: 0 6px;
+}
+
+#tray > .passive {
+    opacity: 0.65;
+}
+
+#tray > .needs-attention {
+    color: @critical;
+}
+
+#idle_inhibitor.activated,
+#pulseaudio.muted,
+#network.disconnected,
+#bluetooth.disabled {
+    color: @warning;
+}
+
+#battery.warning {
+    color: @warning;
+}
+
+#battery.critical {
+    color: @critical;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @accent;
+}
+
+#custom-swaync {
+    color: @accent;
+    min-width: 32px;
+}
+
+#custom-swaync.notification,
+#custom-swaync.dnd-notification {
+    color: @warning;
+}
+
+#custom-swaync.dnd-none {
+    color: @text-muted;
+}
+
+#custom-power {
+    color: @critical;
+    min-width: 28px;
+}
+
+#network,
+#bluetooth,
+#power-profiles-daemon,
+#battery,
+#custom-swaync,
+#custom-power {
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    min-height: 24px;
+    padding: 0 9px;
+    margin: 0 1px;
+}
+
+#idle_inhibitor:hover,
+#mpris:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#power-profiles-daemon:hover,
+#battery:hover,
+#custom-swaync:hover,
+#custom-power:hover {
+    background: @module-bg-hover;
+}
+
+#network:hover,
+#bluetooth:hover,
+#power-profiles-daemon:hover,
+#battery:hover,
+#custom-swaync:hover,
+#custom-power:hover {
+    background: @module-bg-hover;
+}
+
+tooltip {
+    background: @bar-bg;
+    border: 1px solid @border;
+    border-radius: 9px;
+    color: @text;
+    padding: 7px 9px;
+}
+
+label:focus {
+    background: transparent;
+}

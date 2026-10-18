@@ -1,0 +1,3 @@
+[[manager.keymap]]
+on   = [ "v" ]
+run  = "plugin max-preview"

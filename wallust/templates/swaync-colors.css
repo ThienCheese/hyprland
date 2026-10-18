@@ -1,0 +1,11 @@
+@define-color cc-bg {{background}};
+@define-color panel-bg {{color0}};
+@define-color panel-bg-hover {{color8}};
+@define-color panel-raised {{color1}};
+@define-color text {{foreground}};
+@define-color text-muted {{color7}};
+@define-color accent {{color4}};
+@define-color accent-soft {{color2}};
+@define-color warning {{color3}};
+@define-color critical {{color1}};
+@define-color border {{color8}};

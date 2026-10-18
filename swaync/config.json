@@ -1,0 +1,88 @@
+{
+    "positionX": "right",
+    "positionY": "top",
+    "layer": "overlay",
+    "layer-shell": true,
+    "cssPriority": "application",
+    "control-center-positionX": "right",
+    "control-center-positionY": "top",
+    "control-center-margin-top": 52,
+    "control-center-margin-right": 10,
+    "control-center-margin-bottom": 10,
+    "control-center-layer": "overlay",
+    "control-center-exclusive-zone": false,
+    "control-center-width": 380,
+    "control-center-height": 750,
+    "fit-to-screen": false,
+    "notification-window-width": 380,
+    "notification-window-height": 160,
+    "notification-window-preferred-output": "",
+    "keyboard-shortcuts": true,
+    "notification-grouping": true,
+    "hide-on-clear": false,
+    "hide-on-action": true,
+    "text-empty": "No notifications",
+    "relative-timestamps": true,
+    "transition-time": 180,
+    "widgets": [
+        "title",
+        "volume",
+        "backlight",
+        "mpris",
+        "buttons-grid#system",
+        "notifications"
+    ],
+    "widget-config": {
+        "title": {
+            "text": "Notifications",
+            "clear-all-button": false
+        },
+        "volume": {
+            "label": "Volume",
+            "show-per-app": true,
+            "show-per-app-icon": true,
+            "show-per-app-label": true,
+            "expand-per-app": false
+        },
+        "backlight": {
+            "label": "Brightness",
+            "device": "intel_backlight",
+            "subsystem": "backlight"
+        },
+        "mpris": {
+            "autohide": true,
+            "show-album-art": "when-available",
+            "loop-carousel": true
+        },
+        "buttons-grid#system": {
+            "buttons-per-row": 6,
+            "actions": [
+                {
+                    "label": "󰍛",
+                    "command": "/home/cheese/.config/swaync/system-info.sh ram"
+                },
+                {
+                    "label": "󰻠",
+                    "command": "/home/cheese/.config/swaync/system-info.sh cpu"
+                },
+                {
+                    "label": "󰋊",
+                    "command": "/home/cheese/.config/swaync/system-info.sh disk"
+                },
+                {
+                    "label": "󰂛",
+                    "command": "swaync-client -d",
+                    "type": "toggle",
+                    "update-command": "swaync-client -D"
+                },
+                {
+                    "label": "󰆴",
+                    "command": "swaync-client -C"
+                }
+            ]
+        },
+        "notifications": {
+            "vexpand": true
+        }
+    }
+}
