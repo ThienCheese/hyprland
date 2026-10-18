@@ -1,3 +1,4 @@
+/* Wallust colors */
 @import "colors.css";
 
 * {
@@ -8,9 +9,9 @@
 
 window#control-center,
 .control-center {
-    background: @cc-bg;
-    color: @text;
-    border: 1px solid @border;
+    background: @background;
+    color: @foreground;
+    border: 1px solid @color8;
     border-radius: 16px;
     padding: 12px;
 }
@@ -31,28 +32,29 @@ window#notifications,
 .widget-backlight,
 .widget-mpris,
 .widget-buttons {
-    background: @panel-bg;
-    border: 1px solid @border;
+    background: @color0;
+    color: @foreground;
+    border: 1px solid @color8;
     border-radius: 12px;
     padding: 10px;
 }
 
 .widget-title {
-    color: @text;
+    color: @foreground;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
 .widget-title > label {
-    color: @text;
+    color: @foreground;
 }
 
 .widget-dnd:hover,
 .widget-volume:hover,
 .widget-backlight:hover,
 .widget-mpris:hover {
-    background: @panel-bg-hover;
+    background: alpha(@color8, 0.35);
 }
 
 .widget-dnd {
@@ -60,8 +62,8 @@ window#notifications,
 }
 
 .widget-dnd > switch:checked {
-    background: @accent;
-    color: @cc-bg;
+    background: @color4;
+    color: @background;
 }
 
 .widget-volume,
@@ -79,77 +81,77 @@ window#notifications,
 .widget-buttons > flowbox > flowboxchild > button {
     min-width: 42px;
     min-height: 36px;
-    color: @text;
-    background: @panel-bg;
-    border: 1px solid @border;
+    color: @foreground;
+    background: @color0;
+    border: 1px solid @color8;
     border-radius: 10px;
     padding: 7px 10px;
     margin: 2px;
 }
 
 .widget-buttons > flowbox > flowboxchild > button:hover {
-    color: @cc-bg;
-    background: @accent;
-    border-color: @accent;
+    color: @background;
+    background: @color4;
+    border-color: @color4;
 }
 
 .widget-buttons > flowbox > flowboxchild > button:checked,
 .widget-buttons > flowbox > flowboxchild > button.active {
-    color: @cc-bg;
-    background: @accent-soft;
-    border-color: @accent;
+    color: @background;
+    background: @color5;
+    border-color: @color4;
 }
 
 .widget-volume scale trough,
 .widget-backlight scale trough {
-    background: @cc-bg;
+    background: @color8;
     border-radius: 6px;
     min-height: 7px;
 }
 
 .widget-volume scale highlight,
 .widget-backlight scale highlight {
-    background: @accent;
+    background: @color4;
     border-radius: 6px;
 }
 
 .widget-volume scale slider,
 .widget-backlight scale slider {
-    background: @text;
-    border: 2px solid @accent;
+    background: @foreground;
+    border: 2px solid @color4;
     border-radius: 50%;
     min-width: 13px;
     min-height: 13px;
 }
 
 .widget-mpris-player {
-    background: @panel-raised;
+    background: @color8;
     border-radius: 9px;
     padding: 8px;
 }
 
 .widget-mpris-title {
-    color: @text;
+    color: @foreground;
     font-weight: 700;
     font-size: 13px;
 }
 
 .widget-mpris-subtitle {
-    color: @text-muted;
+    color: @color7;
 }
 
 .widget-mpris > box > button {
-    color: @text;
-    background: @panel-bg-hover;
-    border: 1px solid @border;
+    color: @foreground;
+    background: @color8;
+    border: 1px solid @color8;
     border-radius: 8px;
     padding: 6px 11px;
 }
 
 .widget-mpris > box > button:hover {
-    color: @cc-bg;
-    background: @accent;
-    border-color: @accent;
+    color: @background;
+    background: @color4;
+    border-color: @color4;
 }
 
 .widget-notifications {
@@ -163,24 +165,24 @@ window#notifications,
 
 .notification-default-action,
 .notification-action {
-    color: @text;
-    background: @panel-bg;
+    color: @foreground;
+    background: @color0;
     border-radius: 10px;
 }
 
 .notification-title {
-    color: @text;
+    color: @foreground;
     font-weight: 700;
     font-size: 12px;
 }
 
 .notification-body {
-    color: @text-muted;
+    color: @color7;
 }
 
 .notification.critical {
-    border-color: @critical;
-    background: #2c2024;
+    border-color: @color1;
+    background: alpha(@color1, 0.18);
 }
 
 .notification.low {
@@ -189,7 +191,7 @@ window#notifications,
 
 .notification-action:hover,
 .notification-default-action:hover {
-    background: @panel-bg-hover;
+    background: alpha(@color8, 0.35);
 }
 
 scrollbar,
