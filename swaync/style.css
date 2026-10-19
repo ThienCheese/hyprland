@@ -1,204 +1,434 @@
-/* Wallust colors */
-@import "colors.css";
+@import url("colors.css");
+
+/* Khai báo màu chuẩn GTK CSS */
+@define-color cc-bg alpha(@background, 0.96);
+@define-color card-bg alpha(@color1, 0.22);
+@define-color card-bg-hover alpha(@color3, 0.22);
+@define-color card-bg-active alpha(@color4, 0.32);
+
+@define-color border-soft alpha(@color7, 0.14);
+@define-color border-highlight alpha(@foreground, 0.23);
+
+/* ---------- Global ---------- */
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font", sans-serif;
-    font-size: 12px;
-    font-weight: 500;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  color: @foreground;
+  outline: none;
+  text-shadow: none;
+  box-shadow: none;
 }
 
-window#control-center,
+window,
+.blank-window,
+.floating-notifications {
+  background: transparent;
+}
+
+/* ---------- Control center ---------- */
+
 .control-center {
-    background: @background;
-    color: @foreground;
-    border: 1px solid @color8;
-    border-radius: 16px;
-    padding: 12px;
+  background: alpha(@background, 0.97);
+  border: 1px solid @border-highlight;
+  border-top-color: alpha(@foreground, 0.30);
+  border-radius: 14px;
+  padding: 12px;
 }
 
-window#notifications,
-.notification-window {
-    background: transparent;
+.control-center-list {
+  background: transparent;
+  padding: 2px;
 }
 
-.notification-row {
-    margin: 4px 0;
+.control-center-list-placeholder {
+  color: @color8;
+  padding: 24px 12px;
 }
 
-.notification,
-.widget-title,
-.widget-dnd,
+/* ---------- Common widget cards ---------- */
+
+.widget {
+  margin: 4px 0;
+}
+
+.widget-buttons-grid,
 .widget-volume,
 .widget-backlight,
-.widget-mpris,
-.widget-buttons {
-    background: @color0;
-    color: @foreground;
-    border: 1px solid @color8;
-    border-radius: 12px;
-    padding: 10px;
+.widget-title,
+.widget-inhibitors,
+.widget-label {
+  background: @card-bg;
+  border: 1px solid @border-soft;
+  border-top-color: @border-highlight;
+  border-radius: 12px;
+  padding: 10px;
 }
 
-.widget-title {
-    color: @foreground;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
+/* ---------- Responsive buttons grid ---------- */
+
+.widget-buttons-grid {
+  background: @card-bg;
+  border: 1px solid @border-soft;
+  border-top-color: @border-highlight;
+  border-radius: 12px;
+  padding: 6px;
 }
 
-.widget-title > label {
-    color: @foreground;
+.widget-buttons-grid > flowbox {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
 }
 
-.widget-dnd:hover,
-.widget-volume:hover,
-.widget-backlight:hover,
-.widget-mpris:hover {
-    background: alpha(@color8, 0.35);
+.widget-buttons-grid > flowbox > flowboxchild {
+  padding: 4px;
+  margin: 0;
+  border: none;
+  background: transparent;
 }
 
-.widget-dnd {
-    margin-bottom: 8px;
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  min-width: 30px;
+  min-height: 30px;
+  padding: 8px;
+  margin: 0;
+
+  background: alpha(@color1, 0.30);
+  border: 1px solid @border-soft;
+  border-top-color: @border-highlight;
+  border-radius: 10px;
+
+  transition: all 160ms ease;
 }
 
-.widget-dnd > switch:checked {
-    background: @color4;
-    color: @background;
+.widget-buttons-grid > flowbox > flowboxchild > button label {
+  color: @foreground;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: alpha(@color3, 0.30);
+  border-color: alpha(@color6, 0.60);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:active {
+  background: alpha(@color4, 0.40);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: alpha(@color4, 0.35);
+  border-color: @color6;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+  color: @color6;
+}
+
+/* ---------- Volume & Brightness ---------- */
 
 .widget-volume,
 .widget-backlight {
-    margin-bottom: 8px;
+  padding: 10px 12px;
 }
 
-.widget-buttons {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin-bottom: 8px;
-}
-
-.widget-buttons > flowbox > flowboxchild > button {
-    min-width: 42px;
-    min-height: 36px;
-    color: @foreground;
-    background: @color0;
-    border: 1px solid @color8;
-    border-radius: 10px;
-    padding: 7px 10px;
-    margin: 2px;
-}
-
-.widget-buttons > flowbox > flowboxchild > button:hover {
-    color: @background;
-    background: @color4;
-    border-color: @color4;
-}
-
-.widget-buttons > flowbox > flowboxchild > button:checked,
-.widget-buttons > flowbox > flowboxchild > button.active {
-    color: @background;
-    background: @color5;
-    border-color: @color4;
+.widget-volume label,
+.widget-backlight label {
+  color: @color6;
 }
 
 .widget-volume scale trough,
 .widget-backlight scale trough {
-    background: @color8;
-    border-radius: 6px;
-    min-height: 7px;
+  min-height: 7px;
+  border: none;
+  border-radius: 8px;
+  background: alpha(@color8, 0.25);
 }
 
 .widget-volume scale highlight,
 .widget-backlight scale highlight {
-    background: @color4;
-    border-radius: 6px;
+  background: @color4;
+  border-radius: 8px;
 }
 
 .widget-volume scale slider,
 .widget-backlight scale slider {
-    background: @foreground;
-    border: 2px solid @color4;
-    border-radius: 50%;
-    min-width: 13px;
-    min-height: 13px;
+  min-width: 13px;
+  min-height: 13px;
+  background: @foreground;
+  border: 2px solid @color4;
+  border-radius: 50%;
+}
+
+.per-app-volume {
+  margin: 6px 0 0;
+  padding: 8px;
+  background: alpha(@color0, 0.55);
+  border: 1px solid @border-soft;
+  border-radius: 8px;
+}
+
+/* ---------- MPRIS ---------- */
+
+.widget-mpris {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.widget-mpris > box {
+  background: transparent;
+  padding: 0;
 }
 
 .widget-mpris-player {
-    background: @color8;
-    border-radius: 9px;
-    padding: 8px;
+  background: @card-bg;
+  border: 1px solid @border-soft;
+  border-top-color: @border-highlight;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 0;
+}
+
+.widget-mpris-player:only-child {
+  margin: 0;
+}
+
+.widget-mpris-album-art {
+  border-radius: 8px;
 }
 
 .widget-mpris-title {
-    color: @foreground;
-    font-weight: 700;
-    font-size: 13px;
+  color: @foreground;
+  font-weight: 700;
 }
 
 .widget-mpris-subtitle {
-    color: @color7;
+  color: @color8;
+  font-size: 12px;
 }
 
-.widget-mpris > box > button {
-    color: @foreground;
-    background: @color8;
-    border: 1px solid @color8;
-    border-radius: 8px;
-    padding: 6px 11px;
+.widget-mpris-player button {
+  color: @color7;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 6px;
 }
 
-.widget-mpris > box > button:hover {
-    color: @background;
-    background: @color4;
-    border-color: @color4;
+.widget-mpris-player button:hover {
+  color: @foreground;
+  background: @card-bg-hover;
+  border-color: @border-soft;
 }
 
-.widget-notifications {
-    background: transparent;
-    padding: 0;
+.widget-mpris > carouselindicatordots {
+  background: transparent;
+  padding: 4px;
+}
+
+/* ---------- Notifications title & Nút Clear ---------- */
+
+.widget-title {
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.widget-title > label {
+  color: @foreground;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Bo góc nút Clear */
+.widget-title > button {
+  color: @color6;
+  background: alpha(@color3, 0.22);
+  border: 1px solid @border-soft;
+  border-top-color: @border-highlight;
+  border-radius: 10px;
+  padding: 6px 14px;
+  transition: all 160ms ease;
+}
+
+.widget-title > button:hover {
+  background: @card-bg-hover;
+  border-color: @color4;
+}
+
+/* ---------- Notification cards (Bo góc thông báo) ---------- */
+
+.control-center-list > row,
+.control-center-list > row > *,
+.notification-row {
+  background: transparent;
+  border: none;
+}
+
+.notification-row {
+  margin: 5px 2px;
+  padding: 0;
+}
+
+/* Bo góc cho cả thông báo trong Control Center và thông báo nổi */
+.notification-row .notification-background,
+.floating-notifications.background .notification-row .notification-background {
+  background: alpha(@color1, 0.25);
+  border: 1px solid @border-soft;
+  border-top-color: alpha(@foreground, 0.24);
+  border-radius: 12px;
+  padding: 0;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.notification-row .notification-background:hover {
+  background: alpha(@color3, 0.25);
+  border-color: alpha(@color6, 0.45);
+}
+
+.notification-row .notification-background .notification {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
 }
 
 .notification-content {
-    padding: 3px;
+  border-radius: 12px;
 }
 
-.notification-default-action,
+/* App name / summary / body */
+.summary {
+  color: @foreground;
+  font-weight: 700;
+}
+
+.body {
+  color: @color7;
+}
+
+.time {
+  color: @color8;
+  font-size: 11px;
+}
+
+/* Notification actions */
 .notification-action {
-    color: @foreground;
-    background: @color0;
-    border-radius: 10px;
+  color: @foreground;
+  background: alpha(@color3, 0.18);
+  border: 1px solid @border-soft;
+  border-radius: 8px;
+  padding: 6px 8px;
 }
 
-.notification-title {
-    color: @foreground;
-    font-weight: 700;
-    font-size: 12px;
+.notification-action:hover {
+  background: @card-bg-hover;
 }
 
-.notification-body {
-    color: @color7;
+/* Close button */
+.close-button {
+  color: @color8;
+  background: alpha(@background, 0.65);
+  border: 1px solid @border-soft;
+  border-radius: 50%;
+  padding: 3px;
 }
 
-.notification.critical {
-    border-color: @color1;
-    background: alpha(@color1, 0.18);
+.close-button:hover {
+  color: @foreground;
+  background: @color1;
 }
 
-.notification.low {
-    opacity: 0.86;
+/* Grouped notifications (Xử lý bo góc khi nhiều thông báo xếp chồng lên nhau) */
+.notification-group {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 2px;
 }
 
-.notification-action:hover,
-.notification-default-action:hover {
-    background: alpha(@color8, 0.35);
+.notification-group .notification-group-buttons,
+.notification-group .notification-group-headers {
+  background: transparent;
 }
 
-scrollbar,
-scrollbar trough,
+.notification-group .notification-group-collapse-button,
+.notification-group .notification-group-close-all-button {
+  background: alpha(@color3, 0.22);
+  border: 1px solid @border-soft;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+/* ---------- DND / inhibitors ---------- */
+
+.widget-dnd {
+  background: @card-bg;
+  border: 1px solid @border-soft;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.widget-dnd > label {
+  color: @foreground;
+  font-weight: 600;
+}
+
+.widget-dnd > switch {
+  background: @color1;
+  border: 1px solid @border-soft;
+  border-radius: 8px;
+}
+
+.widget-dnd > switch:checked {
+  background: @color4;
+}
+
+.widget-dnd > switch slider {
+  background: @foreground;
+  border-radius: 6px;
+}
+
+.widget-inhibitors > label {
+  color: @color7;
+}
+
+.widget-inhibitors > button {
+  background: @card-bg;
+  border: 1px solid @border-soft;
+  border-radius: 8px;
+  padding: 5px 8px;
+}
+
+/* ---------- Scroll behavior ---------- */
+
 scrollbar slider {
-    min-width: 0;
-    min-height: 0;
-    width: 0;
-    opacity: 0;
+  background: alpha(@color6, 0.45);
+  border-radius: 8px;
+  min-width: 5px;
+  min-height: 30px;
+}
+
+scrollbar trough {
+  background: transparent;
+}
+
+/* ---------- Tooltip ---------- */
+
+tooltip {
+  background: @color0;
+  border: 1px solid @border-highlight;
+  border-radius: 8px;
+  padding: 5px 8px;
+}
+
+tooltip label {
+  color: @foreground;
+  font-size: 11px;
 }
