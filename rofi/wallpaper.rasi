@@ -10,7 +10,7 @@ window {
     anchor: center;
     width: 86%;
     height: 86%;
-    border: 1px;
+    border: 2px;
     border-color: @border-color;
     border-radius: 18px;
     background-color: @background;
@@ -28,20 +28,22 @@ inputbar {
     padding: 10px 12px;
     spacing: 8px;
     border-radius: 10px;
-    background-color: @background-alt;
+    background-color: @normal-background;
+    border: 1px;
+    border-color: @border-color;
 }
 
 prompt {
-    text-color: @accent;
-}
-
-entry {
-    text-color: @foreground;
-    placeholder: "Search wallpapers...";
-    placeholder-color: @muted;
+    text-color: @selected-normal-background;
     background-color: transparent;
 }
 
+entry {
+    text-color: @normal-foreground;
+    placeholder: "Search wallpapers...";
+    placeholder-color: @border-color;
+    background-color: transparent;
+}
 
 listview {
     columns: 4;
@@ -49,7 +51,7 @@ listview {
     fixed-columns: true;
     fixed-height: true;
     cycle: true;
-    spacing: 10px;
+    spacing: 12px;
     scrollbar: false;
     background-color: transparent;
 }
@@ -57,20 +59,27 @@ listview {
 element {
     orientation: vertical;
     children: [ element-icon ];
-    padding: 5px;
-    border: 2px;
-    border-color: transparent;
-    border-radius: 12px;
-    background-color: @background-alt;
+    padding: 8px;
+    border: 3px;
+    border-radius: 14px;
 }
 
-element selected {
-    background-color: @background-alt;
-    border-color: @accent;
+/* Trạng thái các hình ảnh bình thường */
+element normal.normal,
+element alternate.normal {
+    background-color: @normal-background;
+    border-color: transparent;
+}
+
+/* Trạng thái hình ảnh ĐANG ĐƯỢC CHỌN (Nổi bật viền và nền) */
+element selected.normal,
+element selected.active {
+    background-color: @selected-normal-background;
+    border-color: @active-foreground;
 }
 
 element-icon {
-    size: 16em;
+    size: 14em;
     expand: true;
     horizontal-align: 0.5;
     vertical-align: 0.5;
@@ -80,4 +89,3 @@ element-icon {
 element-text {
     enabled: false;
 }
-
