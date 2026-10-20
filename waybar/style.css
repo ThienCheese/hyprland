@@ -181,13 +181,17 @@ window#waybar {
 }
 
 tooltip {
-    background: @background;
+    background-color: @background;
+    color: @foreground;
+
     border: 1px solid @color8;
     border-radius: 9px;
-    color: @foreground;
+
     padding: 7px 9px;
+    box-shadow: none;
 }
 
-label:focus {
-    background: transparent;
+tooltip decoration {
+    background-color: transparent;
+    box-shadow: none;
 }
