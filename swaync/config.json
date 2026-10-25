@@ -14,7 +14,7 @@
 
   "control-center-width": 430,
   "control-center-height": -1,
-  "fit-to-screen": true,
+  "fit-to-screen": false,
 
   "layer-shell": true,
   "layer": "overlay",
