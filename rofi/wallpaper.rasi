@@ -1,91 +1,110 @@
-@import "colors.rasi"
+/* Theme chọn wallpaper: lưới 4 cột x 2 dòng, chỉ hiển thị ảnh */
+
+@import "~/.config/rofi/colors.rasi"
+
+configuration {
+    show-icons: true;
+}
 
 * {
     font: "JetBrainsMono Nerd Font 11";
-    spacing: 6px;
 }
 
 window {
+    transparency: "real";
     location: center;
     anchor: center;
-    width: 86%;
-    height: 86%;
+    width: 70%;
+    background-color: @background;
     border: 2px;
     border-color: @border-color;
-    border-radius: 18px;
-    background-color: @background;
-    padding: 16px;
+    border-radius: 16px;
 }
 
 mainbox {
-    children: [ inputbar, listview ];
-    spacing: 10px;
     background-color: transparent;
+    spacing: 20px;
+    padding: 20px;
+    children: [ "inputbar", "listview" ];
 }
 
+/* ---- Thanh tìm kiếm ---- */
 inputbar {
-    children: [ prompt, entry ];
-    padding: 10px 12px;
-    spacing: 8px;
-    border-radius: 10px;
     background-color: @normal-background;
+    text-color: @normal-foreground;
     border: 1px;
     border-color: @border-color;
+    border-radius: 10px;
+    padding: 10px 14px;
+    spacing: 10px;
+    children: [ "prompt", "entry" ];
 }
 
 prompt {
-    text-color: @selected-normal-background;
     background-color: transparent;
+    text-color: @normal-foreground;
 }
 
 entry {
-    text-color: @normal-foreground;
-    placeholder: "Search wallpapers...";
-    placeholder-color: @border-color;
     background-color: transparent;
+    text-color: @normal-foreground;
+    placeholder: "Search...";
+    placeholder-color: @foreground;
+    cursor: text;
 }
 
+/* ---- Lưới ảnh 4 cột x 2 dòng ---- */
 listview {
+    background-color: transparent;
     columns: 4;
     lines: 2;
+    flow: horizontal;
     fixed-columns: true;
     fixed-height: true;
     cycle: true;
-    spacing: 12px;
     scrollbar: false;
-    background-color: transparent;
+    spacing: 15px;
+    layout: vertical;
 }
 
+/* ---- Mỗi ô: chỉ có ảnh, không hiện tên ---- */
 element {
     orientation: vertical;
-    children: [ element-icon ];
-    padding: 8px;
+    children: [ "element-icon" ];
+    padding: 10px;
     border: 3px;
-    border-radius: 14px;
-}
-
-/* Trạng thái các hình ảnh bình thường */
-element normal.normal,
-element alternate.normal {
-    background-color: @normal-background;
     border-color: transparent;
-}
-
-/* Trạng thái hình ảnh ĐANG ĐƯỢC CHỌN (Nổi bật viền và nền) */
-element selected.normal,
-element selected.active {
-    background-color: @selected-normal-background;
-    border-color: @active-foreground;
+    border-radius: 12px;
+    background-color:transparent; 
+    cursor: pointer;
 }
 
 element-icon {
-    size: 14em;
-    expand: true;
+    size: 270px;
     horizontal-align: 0.5;
     vertical-align: 0.5;
     background-color: transparent;
+    border-radius: 8px;
 }
 
-element-text {
-    enabled: false;
+/* ---- Trạng thái ---- */
+element alternate.normal {
+    background-color: transparent;
+}
+
+/* Ảnh đang được chọn: viền sáng + nền nổi bật */
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color: @selected-normal-background;
+    border-color: #FFFFFF;
+}
+
+element active {
+    border-color: @active-foreground;
+}
+
+/* Ô trống/không có kết quả */
+message {
+    background-color: transparent;
 }
