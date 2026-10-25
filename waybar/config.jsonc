@@ -78,7 +78,8 @@
         "format-connected-battery": "  {device_battery_percentage}%",
         "tooltip-format": "{status}",
         "tooltip-format-connected": "{num_connections} connected",
-        "on-click": "kitty --class kitty -e bluetui"
+        "on-click": "kitty --class kitty -e bluetui",
+        "on-click-right": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on"
     },
 
     "power-profiles-daemon": {
